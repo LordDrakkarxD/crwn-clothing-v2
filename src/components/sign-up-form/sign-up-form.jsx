@@ -3,12 +3,12 @@ import { useState } from "react";
 import FormInput from "../form-input/form-input";
 import Button from "../button/button";
 
-import "./sign-up-form.scss";
-
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils.js";
+
+import "./sign-up-form.scss";
 
 const defaultFormFields = {
   displayName: "",

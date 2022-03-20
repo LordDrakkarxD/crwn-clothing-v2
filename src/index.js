@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
+import { UserProvider } from "./contexts/user.jsx";
+import { ProductsProvider } from "./contexts/products.jsx";
+import { CartProvider } from "./contexts/cart.jsx";
 
 import "./index.scss";
 import App from "./App";
@@ -9,7 +12,13 @@ import reportWebVitals from "./reportWebVitals";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <UserProvider>
+        <ProductsProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </ProductsProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
