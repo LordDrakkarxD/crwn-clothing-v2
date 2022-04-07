@@ -4,11 +4,11 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 import { selectCurrentUser } from "./store/user/user.selector";
 
-import Home from "./routes/home/home.jsx";
-import Navigation from "./routes/navigation/navigation.jsx";
-import Authentication from "./routes/authentication/authentication.jsx";
-import Shop from "./routes/shop/shop.jsx";
-import Checkout from "./routes/checkout/checkout.jsx";
+import Home from "./routes/home/home";
+import Navigation from "./routes/navigation/navigation";
+import Authentication from "./routes/authentication/authentication";
+import Shop from "./routes/shop/shop";
+import Checkout from "./routes/checkout/checkout";
 import { checkUserSession } from "./store/user/user.action";
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(checkUserSession());
-  }, []);
+  }, [dispatch]);
 
   const redirectHandler = currentUser ? (
     <Navigate to="/" />
